@@ -1,0 +1,44 @@
+{
+  "name": "fractals",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.7.2",
+    "electron": "30.0.0",
+    "electron-builder": "^24.13.3",
+    "esbuild": "^0.25.0",
+    "vite": "^7.1.9"
+  },
+  "build": {
+    "appId": "com.holdenburke.fractals",
+    "productName": "Fractal Lab",
+    "files": [
+      "package.json",
+      "main.js"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "icon": "client/src/assets/icon.icns",
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "icon": "client/src/assets/icon.ico"
+    },
+    "linux": {
+      "icon": "client/src/assets/icon.png"
+    }
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8"
+  }
+}
